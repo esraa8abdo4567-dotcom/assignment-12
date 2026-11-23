@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Master | Challenge Your Mind</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <main class="app-container">
+
+    <!-- START SCREEN -->
+    <section id="start-screen" class="screen active">
+      <div class="quiz-logo">🧠</div>
+
+      <span class="subtitle">THE ULTIMATE TRIVIA GAME</span>
+      <h1>QUIZ <span>MASTER</span></h1>
+
+      <p class="description">
+        Test your knowledge, beat the clock,
+        and become the ultimate quiz champion!
+      </p>
+
+      <form id="quiz-form" class="quiz-form">
+
+        <div class="form-group">
+          <label for="category">Question Category</label>
+          <select id="category" required>
+            <option value="">Select a category</option>
+            <option value="9">General Knowledge</option>
+            <option value="10">Books</option>
+            <option value="11">Film</option>
+            <option value="12">Music</option>
+            <option value="17">Science & Nature</option>
+            <option value="18">Computers</option>
+            <option value="19">Mathematics</option>
+            <option value="21">Sports</option>
+            <option value="22">Geography</option>
+            <option value="23">History</option>
+            <option value="27">Animals</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="difficulty">Difficulty Level</label>
+          <select id="difficulty" required>
+            <option value="">Select difficulty</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Number of Questions</label>
+          <select id="amount" required>
+            <option value="5">5 Questions</option>
+            <option value="10" selected>10 Questions</option>
+            <option value="15">15 Questions</option>
+            <option value="20">20 Questions</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="question-type">Question Type</label>
+          <select id="question-type">
+            <option value="">Mixed Questions</option>
+            <option value="multiple">Multiple Choice</option>
+            <option value="boolean">True / False</option>
+          </select>
+        </div>
+
+        <button type="submit" id="start-btn" class="primary-btn">
+          Start Game →
+        </button>
+
+      </form>
+    </section>
+
+    <!-- LOADING SCREEN -->
+    <section id="loading-screen" class="screen">
+      <div class="loader"></div>
+      <h2>Preparing Your Quiz...</h2>
+      <p>Fetching questions from the universe of knowledge</p>
+    </section>
+
+    <!-- QUIZ SCREEN -->
+    <section id="quiz-screen" class="screen">
+
+      <div class="quiz-header">
+        <span class="brand">🧠 QUIZ MASTER</span>
+        <span id="score-display">Score: 0</span>
+      </div>
+
+      <div class="quiz-stats">
+        <span id="question-counter">Question 1 of 10</span>
+        <span id="timer-display">⏱ 15s</span>
+      </div>
+
+      <div class="progress-track">
+        <div id="progress-bar"></div>
+      </div>
+
+      <div class="timer-track">
+        <div id="timer-bar"></div>
+      </div>
+
+      <div class="question-card">
+        <span id="question-category" class="question-tag">
+          GENERAL KNOWLEDGE
+        </span>
+
+        <h2 id="question-text">Question goes here</h2>
+
+        <div id="answers-container" class="answers-container">
+        </div>
+      </div>
+
+      <p class="keyboard-hint">
+        💡 Tip: Press 1, 2, 3 or 4 to select an answer
+      </p>
+
+      <button id="next-btn" class="primary-btn" disabled>
+        Next Question →
+      </button>
+
+    </section>
+
+    <!-- RESULTS SCREEN -->
+    <section id="result-screen" class="screen">
+        <div id="result-icon" class="result-icon">🏆</div>
+
+      <span class="subtitle">CHALLENGE COMPLETED</span>
+
+      <h2>Quiz Finished!</h2>
+
+      <div class="result-score">
+        <span id="final-score">0</span>
+        <span id="total-questions">/ 10</span>
+      </div>
+
+      <p id="result-percentage">0% Correct Answers</p>
+
+      <p id="result-message">
+        Great effort! Keep learning and improving.
+      </p>
+
+      <div class="result-details">
+        <div>
+          <strong id="correct-count">0</strong>
+          <span>Correct</span>
+        </div>
+
+        <div>
+          <strong id="wrong-count">0</strong>
+          <span>Incorrect</span>
+        </div>
+      </div>
+
+      <button id="restart-btn" class="primary-btn">
+        Play Again ↻
+      </button>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
